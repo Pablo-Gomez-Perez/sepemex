@@ -195,66 +195,101 @@ endmodule
 
 module sem(input logic clk, rst, output logic R1,R2,G1,G2,
 B1,B2,CLK_M,LAT,OE,A,B);
-
-	parameter NUM_BITS = 191;
-	assign CLK_M = ~CLK_MOD;
-	assign OE=0;
-	assign R2=0;
+	parameter NUM_BITS=191; //2**N-1
+ 
+	logic CLK_MOD;
+	assign CLK_M=~CLK_MOD;//&(cont_bits<=NUM_BITS);
+	//assign OE=0;//~((cont_bits>18'd200)&&(cont_bits<18'd300));
+	//assign R2=0;
 	assign G1=0;
 	assign G2=0;
 	assign B1=0;
 	assign B2=0;
- 
-	logic [NUM_BITS:0]temp_r1_f1=128'H11111111111111111111111111111111;
-	logic [NUM_BITS:0]temp_r1_f2=128'HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
-	logic [NUM_BITS:0]temp_r1_f3=128'HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
-	logic [NUM_BITS:0]temp_r1_f4=128'HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
-	logic [9:0]cont_bits;
- 
-	logic [NUM_BITS:0]dato_r1;
-	logic [NUM_BITS:0]dato_r2;
+	 
+	logic [NUM_BITS:0]temp_r1_f1=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	logic [NUM_BITS:0]temp_r1_f2=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	logic [NUM_BITS:0]temp_r1_f3=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	logic [NUM_BITS:0]temp_r1_f4=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	 
+	logic [NUM_BITS:0]temp_r2_f1=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	logic [NUM_BITS:0]temp_r2_f2=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	logic [NUM_BITS:0]temp_r2_f3=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	logic [NUM_BITS:0]temp_r2_f4=192'HAAAAAAAAAAAAAAAAaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA;
+	 
+	logic [NUM_BITS:0]dato_r1,dato_r2;
 	always_ff@(posedge CLK_MOD)
-	if(cont_bits==10'd191)
+	if(cont_bits==NUM_BITS) 
 	begin 
-		if(cont_AB ==0) dato_r1<=temp_r1_f1;
-		else if(cont_AB == 1) dato_r1<=temp_r1_f2;
-		else if(cont_AB == 2) dato_r1<=temp_r1_f3;
-		else dato_r1 <= temp_r1_f4;
+		if(cont_AB==0) 
+		begin 
+			dato_r1<=temp_r1_f1;
+			dato_r2<=temp_r2_f1;
+		end
+		else if(cont_AB==1)
+		begin
+			dato_r1<=temp_r1_f2;
+			dato_r2<=temp_r2_f2;
+		end
+		else if(cont_AB==2)
+		begin
+			dato_r1<=temp_r1_f3;
+			dato_r2<=temp_r2_f3;
+		end
+		else 
+		begin
+			dato_r1<=temp_r1_f4;
+			dato_r2<=temp_r2_f4;
+		end
 	end
 	else
-	begin 
-		if(cont_AB == 0) 
-		begin
-			dato_r1<={1'b1,dato_r1[127:1]};
-			//OE <= 0;
-		end
-		else
-		begin 		
-			dato_r1[0]<=0;
-			//OE <= 1;
-		end
+	begin   
+		dato_r1<={1'b1,dato_r1[NUM_BITS:1]};
+		dato_r2<={1'b1,dato_r2[NUM_BITS:1]};
 	end
+ 
 	assign R1=dato_r1[0];
+	assign R2=dato_r2[0];
+	 
+	logic [17:0]cont_bits;  //18 BITS 512KHZ
+	always_ff@(posedge CLK_MOD, negedge rst)
+	if(!rst) cont_bits<=0;
+	else if(cont_bits==NUM_BITS) 
+	begin 
+		cont_bits<=0; 
+		LAT<=1; 
+	end
+	else 
+	begin 
+		cont_bits<=cont_bits+1; 
+		LAT<=0;
+	end
+	 
+	logic [1:0]cont_AB;
+	always_ff@(posedge CLK_MOD)
+	if(cont_bits==NUM_BITS) cont_AB<=cont_AB+1; 
+	else cont_AB<=cont_AB;
+	assign A=cont_AB[1];
+	assign B=cont_AB[0];
+	 
+	 
+	logic [3:0]div;
+	always_ff@(posedge clk)
+	if(div==4'd10)
+	begin 
+		div<=0;
+		CLK_MOD <= ~CLK_MOD;  
+	end
+	else div<=div+1;
+	 
+	 
+	logic [24:0]unseg;
+	always_ff@(posedge clk)
+	if(unseg==25'd13500000)
+	begin  
+		unseg<=0; 
+		OE<=~OE; 
+	end
+	else unseg <= unseg + 1;
+	//assign OE=~((cont_bits<18'd10000)&(cont_bits>18'd9500));
  
-always_ff@(posedge CLK_MOD, negedge rst)
-if(!rst) cont_bits<=0;
-else if(cont_bits==10'd127) begin cont_bits<=0; LAT<=1; end
-else begin cont_bits<=cont_bits+1; LAT<=0;end
- 
-logic [1:0]cont_AB;
-always_ff@(posedge CLK_MOD)
-if(cont_bits==10'd127) cont_AB<=cont_AB+1; 
-else cont_AB<=cont_AB;
-assign A=cont_AB[1];
-assign B=cont_AB[0];
- 
- 
-logic [7:0]div;
-always_ff@(posedge clk)
-if(div==4'd10) begin div<=0; CLK_MOD<= ~CLK_MOD;  end
-else div<=div+1;
- 
- 
-
-
 endmodule
