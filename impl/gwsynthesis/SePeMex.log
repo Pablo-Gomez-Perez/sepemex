@@ -1,6 +1,7 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv'
+WARN  (EX3792) : Literal value 'd3000 truncated to fit in 10 bits("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":224)
 Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
 Analyzing included file 'C:\git programing projects\SysVerilog\SePeMex\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
 Back to file 'C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
@@ -18,19 +19,36 @@ Analyzing included file 'C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_
 Back to file 'C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
 Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\gw_jtag.v'
 Analyzing Verilog file 'C:\git programing projects\SysVerilog\SePeMex\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
-Compiling module 'sem'("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":196)
-WARN  (EX3780) : Using initial value of 'temp_r1_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":209)
-WARN  (EX3780) : Using initial value of 'temp_r1_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":210)
-WARN  (EX3780) : Using initial value of 'temp_r1_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":211)
-WARN  (EX3780) : Using initial value of 'temp_r1_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":212)
-WARN  (EX3780) : Using initial value of 'temp_r2_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":214)
-WARN  (EX3780) : Using initial value of 'temp_r2_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":215)
-WARN  (EX3780) : Using initial value of 'temp_r2_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":216)
-WARN  (EX3780) : Using initial value of 'temp_r2_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":217)
-WARN  (EX3791) : Expression size 19 truncated to fit in target size 18("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":263)
-WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":269)
-WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":282)
-WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":292)
+Compiling module 'semfsm'("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":196)
+WARN  (EX3780) : Using initial value of 'temp_r1_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":242)
+WARN  (EX3780) : Using initial value of 'temp_r1_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":243)
+WARN  (EX3780) : Using initial value of 'temp_r1_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":244)
+WARN  (EX3780) : Using initial value of 'temp_r1_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":245)
+WARN  (EX3780) : Using initial value of 'temp_g1_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":247)
+WARN  (EX3780) : Using initial value of 'temp_g1_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":248)
+WARN  (EX3780) : Using initial value of 'temp_g1_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":249)
+WARN  (EX3780) : Using initial value of 'temp_g1_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":250)
+WARN  (EX3780) : Using initial value of 'temp_b1_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":252)
+WARN  (EX3780) : Using initial value of 'temp_b1_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":253)
+WARN  (EX3780) : Using initial value of 'temp_b1_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":254)
+WARN  (EX3780) : Using initial value of 'temp_b1_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":255)
+WARN  (EX3780) : Using initial value of 'temp_r2_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":257)
+WARN  (EX3780) : Using initial value of 'temp_r2_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":258)
+WARN  (EX3780) : Using initial value of 'temp_r2_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":259)
+WARN  (EX3780) : Using initial value of 'temp_r2_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":260)
+WARN  (EX3780) : Using initial value of 'temp_g2_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":262)
+WARN  (EX3780) : Using initial value of 'temp_g2_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":263)
+WARN  (EX3780) : Using initial value of 'temp_g2_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":264)
+WARN  (EX3780) : Using initial value of 'temp_g2_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":265)
+WARN  (EX3780) : Using initial value of 'temp_b2_f1' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":267)
+WARN  (EX3780) : Using initial value of 'temp_b2_f2' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":268)
+WARN  (EX3780) : Using initial value of 'temp_b2_f3' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":269)
+WARN  (EX3780) : Using initial value of 'temp_b2_f4' since it is never assigned("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":270)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":216)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":218)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":238)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":346)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":362)
 Compiling module 'gw_gao'("C:\git programing projects\SysVerilog\SePeMex\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
 Compiling module 'GW_JTAG'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\gw_jtag.v":1)
 Compiling module '**'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":0)
@@ -39,8 +57,10 @@ WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin
 Compiling module '**'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
 Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.9_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
 Trying to combine GAO to RTL design
-NOTE  (EX0101) : Current top module is "sem"
+NOTE  (EX0101) : Current top module is "semfsm"
+WARN  (EX0211) : The output port "tx" of module "semfsm" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":197)
 [5%] Running netlist conversion ...
+WARN  (CV0016) : Input rx is unused("C:\git programing projects\SysVerilog\SePeMex\src\main_modules.sv":196)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed

@@ -2,9 +2,9 @@
  {
   "InstFile" : "C:/git programing projects/SysVerilog/SePeMex/src/main_modules.sv",
   "InstLine" : 196,
-  "InstName" : "sem",
+  "InstName" : "semfsm",
   "ModuleFile" : "C:/git programing projects/SysVerilog/SePeMex/src/main_modules.sv",
   "ModuleLine" : 196,
-  "ModuleName" : "sem"
+  "ModuleName" : "semfsm"
  }
 ]

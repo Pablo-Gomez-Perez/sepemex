@@ -19,7 +19,7 @@
         <Option type="output_file" value="C:\git programing projects\SysVerilog\SePeMex\impl\gwsynthesis\SePeMex.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
-        <Option type="top_module" value="sem"/>
+        <Option type="top_module" value="semfsm"/>
         <Option type="verilog_language" value="sysv-2017"/>
         <Option type="vhdl_language" value="vhdl-1993"/>
     </OptionList>

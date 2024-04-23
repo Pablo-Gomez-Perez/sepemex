@@ -3,7 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst C:\git programing projects\SysVerilog\SePeMex\src\SePeMex.cst
 -cfg C:\git programing projects\SysVerilog\SePeMex\impl\pnr\device.cfg
--gao_crc 1001101001010101
+-gao_crc 1010101110010111
 -bit
 -tr
 -ph

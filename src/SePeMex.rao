@@ -2,9 +2,9 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Lite</Mode>
-    <AoCore_Lite index="0" sample_clock="clk" trig_type="0" capture_amount="4096" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="sem">
+    <AoCore_Lite index="0" sample_clock="clk" trig_type="0" capture_amount="4096" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="semfsm">
         <SignalList>
-            <Signal capture_enable="true">CLK_MOD</Signal>
+            <Signal capture_enable="true">CLK_M</Signal>
             <Signal capture_enable="true">R1</Signal>
             <Signal capture_enable="true">R2</Signal>
             <Signal capture_enable="true">A</Signal>
@@ -18,5 +18,5 @@
             <Signal capture_enable="true">B2</Signal>
         </SignalList>
     </AoCore_Lite>
-    <GAO_ID>1001101001010101</GAO_ID>
+    <GAO_ID>1010101110010111</GAO_ID>
 </GAO_CONFIG>

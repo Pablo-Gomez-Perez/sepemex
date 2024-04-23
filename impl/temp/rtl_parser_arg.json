@@ -11,7 +11,7 @@
  ],
  "LoopLimit" : 2000,
  "ResultFile" : "C:/git programing projects/SysVerilog/SePeMex/impl/temp/rtl_parser.result",
- "Top" : "sem",
+ "Top" : "semfsm",
  "VerilogStd" : "sysv",
  "VhdlStd" : "vhdl_93"
 }

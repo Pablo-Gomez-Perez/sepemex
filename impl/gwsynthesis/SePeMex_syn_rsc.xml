@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="sem" Register="243" Alu="24" Lut="52">
-    <SubModule name="gw_gao_inst_0" Register="151" Lut="178" Bsram="2"/>
+<Module name="semfsm" Register="259" Alu="48" Lut="50">
+    <SubModule name="gw_gao_inst_0" Register="151" Lut="162" Bsram="3"/>
 </Module>
