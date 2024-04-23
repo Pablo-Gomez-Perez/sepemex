@@ -1,12 +1,12 @@
 module gw_gao(
     CLK_MOD,
-    rst,
-    LAT,
     R1,
+    R2,
     A,
     B,
+    LAT,
+    rst,
     OE,
-    R2,
     G1,
     G2,
     B1,
@@ -19,13 +19,13 @@ module gw_gao(
 );
 
 input CLK_MOD;
-input rst;
-input LAT;
 input R1;
+input R2;
 input A;
 input B;
+input LAT;
+input rst;
 input OE;
-input R2;
 input G1;
 input G2;
 input B1;
@@ -37,13 +37,13 @@ input tdi_pad_i;
 output tdo_pad_o;
 
 wire CLK_MOD;
-wire rst;
-wire LAT;
 wire R1;
+wire R2;
 wire A;
 wire B;
+wire LAT;
+wire rst;
 wire OE;
-wire R2;
 wire G1;
 wire G2;
 wire B1;
@@ -122,7 +122,7 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({CLK_MOD,rst,LAT,R1,A,B,OE,R2,G1,G2,B1,B2}),
+    .data_i({CLK_MOD,R1,R2,A,B,LAT,rst,OE,G1,G2,B1,B2}),
     .clk_i(clk)
 );
 
